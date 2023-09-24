@@ -1,24 +1,39 @@
 
 import React from 'react'
+import './index.css'
 
-import HOOKS_USESTATE2 from './HOOKS_USESTATE/index2'
+const handleParentClick = (event) =>{
+    console.log("parent event : ", event)
+   }
+   const handleIncriment = (event) =>{
+    event.stopPropagation();
+    console.log("child event : ", event)
+   }
 
-
-export default function App() {
+  
+  const App = () => {
     return (
-        <div>
-          
-            <HOOKS_USESTATE2 />
+        <div className='parent' onClick={handleParentClick} >
+          <h1> Welcome everyone</h1>
+          <button onClick={handleIncriment}> +</button>
         </div>
     )
 }
 
+export default App;
 
 
 
 
+/*const handleParentClick = (event) =>{
+    console.log("parent event: ", event)
+}
 
-
+  const handleIncriment = (event) =>{
+        event.stopPropagation();
+        console.log("child event: ", event)
+  }
+)*/
 
 
 
